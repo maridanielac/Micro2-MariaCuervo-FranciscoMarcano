@@ -40,3 +40,42 @@
 .read-the-docs {
   color: #888;
 }
+
+.padre {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.texto-input{
+  background-color: #cccccc40;
+  border-color: slategray;
+  border-radius: 30px;
+  width: 100%;
+}
+
+.btnform {
+  background-color: #0D6EFD;
+  border-color: slategray;
+  border-radius: 30px;
+  width: 100%;
+  padding: 15px;
+  border-width: 0px;
+  margin-bottom: 20px;
+  color: white;
+}
+
+.texto {
+  font-size: 20px;
+  margin-top: 5px;
+}
+
+.btnswitch {
+  background-color: darkblue;
+  border-radius: 30px;
+  padding: 8px;
+  border-width: 0px;
+  color: white;
+  font-size: 16px;
+}

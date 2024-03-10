@@ -1,15 +1,19 @@
 
 import { Link } from 'react-router-dom';
+import appFirebase from "../../src/credenciales";
+import {getAuth, signOut  } from "firebase/auth";
+const auth = getAuth(appFirebase)
 
-const HomePage = () => {
+const HomePage = ({correoUsuario}) => {
         
     
         return (
             <div>
                 <h1>Hello</h1>
-                <Link to="/clubs">
+                <h4>{correoUsuario}<button className='btn btn-primary' onClick={() => signOut(auth)} >Logout</button></h4>
+                {/* <Link to="/clubs">
                     Ver Clubs
-                </Link>
+                </Link> */}
             </div>
         )    
     };
