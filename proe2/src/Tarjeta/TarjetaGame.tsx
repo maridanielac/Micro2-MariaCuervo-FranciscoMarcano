@@ -14,12 +14,12 @@ export default function Tarjeta({games}: Props){
         <section className={styles.tarjeta}>
             <h2 className={styles.icono}>{games.ID}</h2>
             <h2>{games.titulo}</h2>
-            <h2>{games.ID}</h2>
             <h3>{games.genero}</h3>
             <h3>{games.descripcion}</h3>
             <Link to="/clubs:id">
                 VerVideojuegos
             </Link>
+            
         </section>
     )
 }
