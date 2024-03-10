@@ -157,10 +157,7 @@ function ClubPage() {
       "descripcion": "Embárcate en un viaje al inframundo y desafía a los dioses en este juego de acción y mitología."
     }
   ]
- 
- 
- 
- 
+  
   return (
     <>
 
@@ -175,12 +172,6 @@ function ClubPage() {
             <Tarjeta1 
             key={usuario.ID + index} // Change 'ID' to 'id' in the key prop
             usuario={usuario} /> // Add closing tag for 'Tarjeta' component
-        ))}
-
-        {games.map((games, index) => (
-            <Tarjeta 
-            key={games.ID + index} // Change 'ID' to 'id' in the key prop
-            games={games} /> // Add closing tag for 'Tarjeta' component
         ))}
     </section>
     </>
