@@ -1,7 +1,7 @@
-import Tarjeta from '../Tarjeta/TarjetaGame'; // Import the 'Tarjeta' component
+import Tarjeta from '../Tarjeta/Tarjeta'; // Import the 'Tarjeta' component
 
 function Vpage() {
-  const games = [
+  const videojuegos = [
     {
       "ID": "1",
       "titulo": "The Witcher 3: Wild Hunt",
@@ -133,18 +133,18 @@ function Vpage() {
     <>
 
       <div>CLUB</div>
-    <section style={{
-        display:"grid",
+      <section style={{
+        display: "grid",
         gap: "8px",
         padding: "20px",
-        }}>
-        
-        {games.map((games, index) => (
-            <Tarjeta 
-            key={games.ID + index} // Change 'ID' to 'id' in the key prop
-            games={games} /> // Add closing tag for 'Tarjeta' component
+      }}>
+        {videojuegos.map((videojuego, index) => (
+          <Tarjeta
+            key={videojuego.ID + index}
+            games={videojuego}
+          />
         ))}
-    </section>
+      </section>
     </>
   )
 }

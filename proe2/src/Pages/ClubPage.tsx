@@ -1,5 +1,5 @@
-import Tarjeta1 from '../Tarjeta/Tarjeta'; // Import the 'Tarjeta' component
-import Tarjeta from '../Tarjeta/TarjetaGame';
+// Import the 'Tarjeta' component
+import Tarjeta from '../Tarjeta/Tarjeta';
 
 function ClubPage() {
   const usuario = [
@@ -169,9 +169,11 @@ function ClubPage() {
         }}>
         
         {usuario.map((usuario, index) => (
-            <Tarjeta1 
+            <Tarjeta
             key={usuario.ID + index} // Change 'ID' to 'id' in the key prop
-            usuario={usuario} /> // Add closing tag for 'Tarjeta' component
+            usuario={usuario} 
+            games={games}
+            /> // Add closing tag for 'Tarjeta' component
         ))}
     </section>
     </>

@@ -2,7 +2,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     padding: 10px;
   
     /* From https://css.glass */
@@ -16,6 +15,8 @@
     .badge {
       padding: 5px 16px;
       border-radius: 16px;
+      align-items: center;
+      size: 5px;
   
     }
   
