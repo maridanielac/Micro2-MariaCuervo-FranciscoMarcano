@@ -8,7 +8,7 @@ const HomePage = () => {
         return (
             <div id="header">
             <div id="header-container">
-                <h1 id="header-button">Mi Aplicación Genial</h1>
+                <h1 id="header-title">Mi Aplicación Genial</h1>
                 <nav id="header-nav">
                     <Link to="/clubs" className="header-button">
                         Ver Clubs
