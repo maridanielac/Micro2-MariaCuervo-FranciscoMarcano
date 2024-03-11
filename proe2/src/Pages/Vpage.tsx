@@ -1,7 +1,10 @@
-import Tarjeta from '../Tarjeta/Tarjeta'; // Import the 'Tarjeta' component
+
+import "./ProductDetail.css"
+import { useState } from 'react';
+import Tarjeta from '../Tarjeta/TarjetaGame'; // Importa el componente 'Tarjeta'
 
 function Vpage() {
-  const videojuegos = [
+  const videojuegos =  [
     {
       "ID": "1",
       "titulo": "The Witcher 3: Wild Hunt",
@@ -122,31 +125,61 @@ function Vpage() {
       "genero": "Roguelike",
       "descripcion": "Embárcate en un viaje al inframundo y desafía a los dioses en este juego de acción y mitología."
     }
-  ]
- 
- 
- 
- 
- 
- 
+  ];
+
+  const [searchText, setSearchText] = useState('');
+
+  // Función para filtrar los videojuegos por título
+  const filteredVideojuegos = videojuegos
+    .map((videojuego, index) => ({ ...videojuego, originalIndex: index })) // Almacena el índice original
+    .filter(videojuego =>
+      videojuego.titulo.toLowerCase().includes(searchText.toLowerCase())
+    )
+    .sort((a, b) => a.originalIndex - b.originalIndex); // Ordena los juegos filtrados por sus índices originales
+
   return (
     <>
-
-      <div>CLUB</div>
-      <section style={{
-        display: "grid",
-        gap: "8px",
-        padding: "20px",
-      }}>
-        {videojuegos.map((videojuego, index) => (
-          <Tarjeta
-            key={videojuego.ID + index}
-            games={videojuego}
-          />
-        ))}
-      </section>
+      <div style={{ textAlign: 'center', position: 'fixed', top: 0, left: 0, right: 0, background: '#fff', zIndex: 999 }}>
+        <h1>Buscador de Videojuegos</h1>
+        <input
+          type="text"
+          value={searchText}
+          onChange={e => setSearchText(e.target.value)}
+          placeholder="Buscar por título..."
+          className="btn"
+          style={{
+            padding: "10px 20px",
+            fontSize: "16px",
+            fontWeight: "bold",
+            textTransform: "uppercase",
+            borderRadius: "5px",
+            border: "none",
+            cursor: "pointer",
+            // Color de fondo
+            color: "black", // Color del texto
+            transition: "background-color 0.3s ease",
+          }}
+        />
+      </div>
+      <div style={{ paddingTop: '150px', paddingLeft: '20px', paddingRight: '20px' }}> {/* Ajusta el padding top para que la sección de juegos no se superponga con el título y el botón */}
+        {searchText !== '' && (
+          <section style={{
+            display: "flex",
+            gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))",
+            gap: "20px", // Espacio de separación entre las tarjetas
+            padding: "20px",
+          }}>
+            {filteredVideojuegos.map((videojuego, index) => (
+              <Tarjeta
+                key={videojuego.ID + index}
+                games={videojuego}
+              />
+            ))}
+          </section>
+        )}
+      </div>
     </>
-  )
+  );
 }
 
 export default Vpage;
