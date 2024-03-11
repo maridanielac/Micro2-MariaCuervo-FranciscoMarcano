@@ -1,0 +1,10 @@
+.header{
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: antiquewhite;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    z-index: 100%;
+}

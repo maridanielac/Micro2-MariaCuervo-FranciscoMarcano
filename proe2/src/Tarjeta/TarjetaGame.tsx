@@ -16,9 +16,6 @@ export default function Tarjeta({games}: Props){
             <h2>{games.titulo}</h2>
             <h3>{games.genero}</h3>
             <h3>{games.descripcion}</h3>
-            <Link to="/clubs:id">
-                VerVideojuegos
-            </Link>
             
         </section>
     )

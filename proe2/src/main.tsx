@@ -7,6 +7,7 @@ import HomePage from './Pages/HomePage.tsx';
 import ClubPage from './Pages/ClubPage.tsx';
 import ClubDetail from './Pages/ClubDetail.tsx';
 import Vpage from './Pages/Vpage.tsx';
+import Header from './navegacion/Header.tsx';
 
 
 const router = createBrowserRouter([
@@ -25,6 +26,10 @@ const router = createBrowserRouter([
   {
     path: "/games",
     element: <div><Vpage/></div>,
+  },
+  {
+    path: "/he",
+    element: <div><Header/></div>,
   },
   
 ]);
