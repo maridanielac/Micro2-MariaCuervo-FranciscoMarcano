@@ -5,7 +5,7 @@ function App() {
 
   return (
     <>
-      <Header />
+      <h1>Hola</h1>
     </>
   )
 }
