@@ -1,19 +1,19 @@
 
 import { Link } from 'react-router-dom';
-import Header from '../navegacion/Header';
+import "./HPage.css"
 
 const HomePage = () => {
         
     
         return (
-            <div className="header">
-            <div className="header-container">
-                <h1 className="header-title">Mi Aplicación Genial</h1>
-                <nav className="header-nav">
-                    <Link to="/clubs" className="header-link">
+            <div id="header">
+            <div id="header-container">
+                <h1 id="header-button">Mi Aplicación Genial</h1>
+                <nav id="header-nav">
+                    <Link to="/clubs" className="header-button">
                         Ver Clubs
                     </Link>
-                    <Link to="/games" className="header-link">
+                    <Link to="/games" className="header-button">
                         Buscador de Juegos
                     </Link>
                     <Link to="/login" className="header-button">
@@ -24,7 +24,7 @@ const HomePage = () => {
                     </Link>
                 </nav>
             </div>
-        </div>
+            </div>
         )    
     };
     

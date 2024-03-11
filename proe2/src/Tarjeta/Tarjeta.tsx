@@ -12,8 +12,8 @@ export default function Tarjeta({ usuario, games }: Props) {
 return (
     <section className={styles.tarjeta}>
         <h2 className={styles.icono}>{usuario.ID}</h2>
-        <h2>{usuario.nombre}</h2>
-        <h3>{usuario.descripcion}</h3>
+        <h2 className={styles.badge}>{usuario.nombre}</h2>
+        <h3 className={styles.badge}>{usuario.descripcion}</h3>
         <h3>Lista de Juegos</h3>
         
         <footer>
@@ -24,12 +24,11 @@ return (
                         return (
                             <span
                                 key={game.ID}
-                            >
-                                <div>{game.ID}</div>
+                                className={styles.badge}
+                                style={{backgroundColor: 'skyblue', color: 'white', alignContent: 'center'}}
+                                >
                                 
                                 {game.titulo}
-                                {game.genero}
-                                {game.descripcion}
                                 
                             </span>
                         );
