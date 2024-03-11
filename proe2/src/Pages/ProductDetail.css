@@ -21,7 +21,7 @@
 }
 
 .btn {
-    display: inline-block;
+    
     padding: 10px 20px;
     font-size: 16px;
     font-weight: bold;
@@ -30,8 +30,7 @@
     border-radius: 5px;
     cursor: pointer;
     background-color: white /* Color de fondo */
-    color: white; /* Color del texto */
-    transition: background-color 0.3s ease;
+    
   }
   
   /* Estilos del botón al pasar el cursor sobre él */
