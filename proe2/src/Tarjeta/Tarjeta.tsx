@@ -10,11 +10,13 @@ interface Props {
 
 export default function Tarjeta({ usuario, games }: Props) {
 return (
-    <section className={styles.tarjeta}>
+    <article className={styles.tarjeta}>    
         <h2 className={styles.icono}>{usuario.ID}</h2>
         <h2 className={styles.badge}>{usuario.nombre}</h2>
         <h3 className={styles.badge}>{usuario.descripcion}</h3>
-        <h4>Lista de Juegos</h4>
+        <section>
+        <h4 id={styles.tarjeta} >Lista de Juegos</h4>
+        </section>
         
         <footer>
             <h3>
@@ -25,7 +27,7 @@ return (
                             <span
                                 key={game.ID}
                                 className={styles.badge}
-                                style={{backgroundColor: 'skyblue', color: 'white', alignContent: 'center'}}
+                                style={{backgroundColor: 'skyblue', color: 'white', alignContent: 'center', marginTop: '20px'}}
                                 >
                                 
                                 {game.titulo}
@@ -38,6 +40,6 @@ return (
             </h3>
         </footer>
         
-    </section>
+    </article>
 )
 }

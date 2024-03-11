@@ -161,11 +161,11 @@ function ClubPage() {
   return (
     <>
 
-      <div>CLUB</div>
+    <h1>Clubs</h1>  
     <section style={{
-        display:"flex",
-        gap: "8px",
-        padding: "20px",
+        display:"grid",
+        gap: "50px",
+        padding: "0px 250px",
         }}>
         
         {usuario.map((usuario, index) => (
