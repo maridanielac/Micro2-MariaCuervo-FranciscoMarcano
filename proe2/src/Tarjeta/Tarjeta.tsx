@@ -14,7 +14,7 @@ return (
         <h2 className={styles.icono}>{usuario.ID}</h2>
         <h2 className={styles.badge}>{usuario.nombre}</h2>
         <h3 className={styles.badge}>{usuario.descripcion}</h3>
-        <h3>Lista de Juegos</h3>
+        <h4>Lista de Juegos</h4>
         
         <footer>
             <h3>
