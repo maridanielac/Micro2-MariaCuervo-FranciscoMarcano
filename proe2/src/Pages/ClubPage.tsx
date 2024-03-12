@@ -160,8 +160,8 @@ function ClubPage() {
   
   return (
     <>
-
-    <h1>Clubs</h1>  
+    <div>
+    <h1 style={{textAlign: 'center'}}>Clubs</h1>  
     <section style={{
         display:"grid",
         gap: "50px",
@@ -176,6 +176,8 @@ function ClubPage() {
             /> // Add closing tag for 'Tarjeta' component
         ))}
     </section>
+    </div>
+    
     </>
   )
 }

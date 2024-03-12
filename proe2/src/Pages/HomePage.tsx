@@ -9,10 +9,9 @@ const HomePage = () => {
             
             <>
             
-            <section id="header">
-                <section id="header-container">
-                    <h1 className="header-title">Mi Aplicación Genial</h1>
-                    <section id="header-nav">
+            <div style={{ display: 'flex', textAlign: 'right', position: 'fixed', top: 20, left: 'auto', right: 0, background: '#fff', zIndex: 999 }}>
+            
+                        
                         <Link to="/clubs" className="header-button">
                             Ver Clubs
                         </Link>
@@ -25,9 +24,9 @@ const HomePage = () => {
                         <Link to="/register" className="header-button">
                             Registrarse
                         </Link>
-                    </section>
-                </section>
-            </section>
+            
+            </div>
+            
             </>
         )    
     };
