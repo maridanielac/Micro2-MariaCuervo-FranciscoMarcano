@@ -35,5 +35,5 @@
   
   /* Estilos del botón al pasar el cursor sobre él */
   .btn:hover {
-    background-color: palevioletred; /* Cambia el color de fondo al pasar el cursor */
+    background-color: rgb(121, 150, 225); /* Cambia el color de fondo al pasar el cursor */
   }
