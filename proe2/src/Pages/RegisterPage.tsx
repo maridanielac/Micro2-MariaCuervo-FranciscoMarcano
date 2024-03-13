@@ -1,14 +1,13 @@
-import React,  { useState } from "react";
-import imageGoogle from "../assets/google.png"
+import { useState } from "react";
 
 import {auth} from "../../src/credenciales";
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword, GoogleAuthProvider, signInWithRedirect  } from "firebase/auth";
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword  } from "firebase/auth";
 
 
 const RegisterPage = () => {
-    const [registrando, setRegistrando] = useState(false)   
+    const [registrando] = useState(false)   
 
-    const functAutenticacion = async(e) => {
+    const functAutenticacion = async(e: any) => {
         e.preventDefault();
         const correo = e.target.email.value;
         const password = e.target.password.value;
@@ -31,13 +30,6 @@ const RegisterPage = () => {
         }
        
     }
-
-    const autenticationGoogle = async() => {
-       
-            const provider = new GoogleAuthProvider();
-            await signInWithRedirect(auth, provider);
-          
-    }
     
     return (
         <div className="container">
@@ -55,8 +47,7 @@ const RegisterPage = () => {
                                 <button className="btnform">Registrate</button>
                                 
                             </form>
-                            {/* <button ><img src={imageGoogle}></img> <span>Iniciar con Google</span></button> */}
-                            {/* <h4>{registrando ? "Ya tienes cuenta"  : "No tienes cuenta"} <button className="btnswitch" onClick={() => {setRegistrando(!registrando)}}>{registrando ? "Iniciar sesion" : "Registrate"}</button></h4> */}
+                
                         </div>
                     </div>
                     

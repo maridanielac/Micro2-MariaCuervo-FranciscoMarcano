@@ -1,9 +1,6 @@
 import { Games } from '../models/games';
 import styles from './Tarjeta.module.css';
 
-
-import { Link } from 'react-router-dom';
-
 interface Props{
     games: Games, 
 }

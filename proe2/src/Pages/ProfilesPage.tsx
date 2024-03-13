@@ -1,28 +1,23 @@
-import React,  { useState, useEffect } from "react";
-import imageGoogle from "../assets/google.png"
+import { useState, useEffect } from "react";
 
-import {auth} from "../../src/credenciales";
-import {getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, GoogleAuthProvider, signInWithRedirect  } from "firebase/auth";
-
-
-import { collection, getDocs, getDoc, deleteDoc, doc, updateDoc } from "firebase/firestore";
+import { collection, getDocs, doc, updateDoc } from "firebase/firestore";
 import { db } from "../credenciales";
 
 const ProfilePage = () => {
     const [nombre, setNombre] = useState("")
-    const [apellido, setApellido] = useState("test")
+    //const [apellido] = useState("test")
     const [profiles, setProfiles] = useState([])
     const profilesCollection = collection(db,"profiles")
 
     const getProfiles = async() => {
         const data = await getDocs(profilesCollection)
 
-         setProfiles (
-              data.docs.map((doc) => ({...doc.data(), id:doc.id}))
-          )
+          setProfiles (
+               data.docs.map((doc) => ({...doc.data(), id:doc.id}))
+           )
     }
 
-    const guardar = async (id) => {
+    const guardar = async (id: any) => {
         const profileDoc = doc(db,"profiles", id)
         const newProfile = {nombre: nombre};
         await updateDoc(profileDoc, newProfile)
@@ -35,7 +30,7 @@ const ProfilePage = () => {
     
     return (
         <div className="container">
-        {profiles.map((profile) => {
+        {profiles.map((profile: any) => {
                 
                 return (
                     <div className="row">

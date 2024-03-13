@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './App.tsx'
+//import App from './App.tsx'
 import './index.css'
 import { createBrowserRouter,RouterProvider, } from "react-router-dom";
 import HomePage from './Pages/HomePage.tsx';
@@ -37,7 +37,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/fire",
-    element: <div><AllClubPages nombre={undefined} descripcion={undefined} videojuegos={undefined}/></div>,
+    element: <div><AllClubPages nombre={undefined || ""} descripcion={undefined || ""} videojuegos={undefined || []}/></div>,
   },
   {
     path: "/Login",

@@ -1,6 +1,5 @@
 
 import './App.css'
-import Header from './navegacion/Header'
 
 function App() {
 

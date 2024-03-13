@@ -1,17 +1,17 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { Link } from 'react-router-dom';
 
 import {auth} from "../../src/credenciales";
-import {getAuth, signOut  } from "firebase/auth";
+import { signOut  } from "firebase/auth";
 import { onAuthStateChanged } from "firebase/auth";
 
 import "./HPage.css"
 
 const HomePage = () => {
         
-    const [user,setuser] = useState(null);
+    const [user,setuser] = useState<any>(null);
 
-   onAuthStateChanged(auth, (currentUser) => {
+   onAuthStateChanged(auth, (currentUser: any) => {
     setuser(currentUser);
    });
         return (

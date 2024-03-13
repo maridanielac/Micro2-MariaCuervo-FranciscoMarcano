@@ -1,9 +1,10 @@
-import React,  { useState } from "react";
+//import React,  { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import imageGoogle from "../assets/google.png"
+// import imageGoogle from "../assets/google.png"
 import {auth} from "../../src/credenciales";
-import {createUserWithEmailAndPassword, signInWithEmailAndPassword, GoogleAuthProvider, signInWithRedirect  } from "firebase/auth";
-import { Link,Navigate } from "react-router-dom";
+//, GoogleAuthProvider, signInWithRedirect, createUserWithEmailAndPassword,
+import { signInWithEmailAndPassword  } from "firebase/auth";
+import { Link } from "react-router-dom";
 import '../App.css'
 
 
@@ -11,7 +12,7 @@ const LoginPage = () => {
 
     const navigate = useNavigate();
 
-    const functAutenticacion = async(e) => {
+    const functAutenticacion = async(e: any) => {
         e.preventDefault();
         const correo = e.target.email.value;
         const password = e.target.password.value;
@@ -25,12 +26,12 @@ const LoginPage = () => {
        
     }
 
-    const autenticationGoogle = async() => {
+    // const autenticationGoogle = async() => {
        
-            const provider = new GoogleAuthProvider();
-            await signInWithRedirect(auth, provider);
+    //         const provider = new GoogleAuthProvider();
+    //         await signInWithRedirect(auth, provider);
           
-    }
+    // }
     
     return (
         <div className="container">

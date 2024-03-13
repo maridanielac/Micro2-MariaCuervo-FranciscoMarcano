@@ -1,13 +1,13 @@
 import { useLocation, useParams } from 'react-router-dom';
 import "./ProductDetail.css"
-import { Club } from '../models/clubs';
+import { Club } from '../models/usuario';
 
 function ClubDetail() {
   const { ID } = useParams();
   const location = useLocation();
   const { clubs } = location.state;
 
-  const clubss = clubs.find((user: Club) => user.id === parseInt(ID || "", 10));
+  const clubss = clubs.find((user: Club) => user.ID === ID);
 
   if (!clubss) {
     return <p>Producto no encontrado</p>;

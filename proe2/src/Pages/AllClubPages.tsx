@@ -1,4 +1,4 @@
-export default function AllClubPages({nombre, descripcion, videojuegos}: {nombre: string, descripcion: string, videojuegos: string}) {
+export default function AllClubPages({nombre, descripcion, videojuegos}: {nombre: string, descripcion: string, videojuegos: string[]}) {
     
     return (
         <div>
