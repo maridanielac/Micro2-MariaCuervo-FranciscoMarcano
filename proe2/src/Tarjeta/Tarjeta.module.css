@@ -2,7 +2,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
     padding: 10px;
   
     /* From https://css.glass */
@@ -14,9 +13,12 @@
     border: 1px solid rgba(255, 255, 255, 0.58);
   
     .badge {
+      display: flex;
       padding: 5px 16px;
       border-radius: 16px;
-  
+      align-items: center;
+      justify-content: center;
+      size: 6px;
     }
   
     footer { 
@@ -32,7 +34,7 @@
   }
 
 .icono{
-  background-color: pink;
-  padding: 10px;
-  border-radius: 70%;
+  background-color: #63C5da;
+  padding: 5px;
+  border-radius: 100%;
 }
