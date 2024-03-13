@@ -1,40 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import Tarjeta from '../Tarjeta/Tarjeta';
-import { getClubs } from './club';
 
-function AllClubPages() {
-    const [clubs, setClubs] = useState([]);
-
-    useEffect(() => {
-        async function fetchClubs() {
-            try {
-                const fetchedClubs = await getClubs();
-                setClubs(fetchedClubs);
-            } catch (error) {
-                console.error('Error fetching clubs:', error);
-            }
-        }
-        fetchClubs();
-    }, []);
-
+export default function AllClubPages({nombre, descripcion, videojuegos}) {
+    
     return (
-        <>
-            <section style={{
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-                gap: "10px",
-            }}>
-                {/* Now clubs is an array, use map to iterate */}
-                {clubs.map((club) => (
-                    <Tarjeta
-                        key={club.id}
-                        club={club}
-                    />
-                ))}
-            </section>
-        </>
-    );
+        <div>
+            <h1>{nombre}</h1>
+            <p>{descripcion}</p>
+            <p>{videojuegos}</p>
+        </div>
+    )
 }
-
-export default AllClubPages;

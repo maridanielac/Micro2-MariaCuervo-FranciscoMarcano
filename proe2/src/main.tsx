@@ -13,6 +13,7 @@ import AllClubPages from './Pages/AllClubPages.tsx';
 
 
 
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -36,9 +37,8 @@ const router = createBrowserRouter([
   },
   {
     path: "/fire",
-    element: <div><AllClubPages/></div>,
+    element: <div><AllClubPages nombre={undefined} descripcion={undefined} videojuegos={undefined}/></div>,
   },
-  
   
   
 ]);
