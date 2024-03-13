@@ -1,6 +1,4 @@
-import React, { useEffect, useState } from 'react';
-
-export default function AllClubPages({nombre, descripcion, videojuegos}) {
+export default function AllClubPages({nombre, descripcion, videojuegos}: {nombre: string, descripcion: string, videojuegos: string}) {
     
     return (
         <div>
