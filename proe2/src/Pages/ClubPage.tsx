@@ -2,7 +2,7 @@
 import Tarjeta from '../Tarjeta/Tarjeta';
 
 function ClubPage() {
-  const usuario = [
+  const clubs = [
     {
       "ID": "1",
       "nombre": "Club de Aventureros",
@@ -168,10 +168,10 @@ function ClubPage() {
         padding: "0px 250px",
         }}>
         
-        {usuario.map((usuario, index) => (
+        {clubs.map((clubs, index) => (
             <Tarjeta
-            key={usuario.ID + index} // Change 'ID' to 'id' in the key prop
-            usuario={usuario} 
+            key={clubs.ID + index} // Change 'ID' to 'id' in the key prop
+            clubs={clubs} 
             games={games}
             /> // Add closing tag for 'Tarjeta' component
         ))}

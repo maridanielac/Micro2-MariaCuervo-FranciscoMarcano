@@ -1,19 +1,19 @@
 import { Games } from '../models/games';
-import { Usuario } from '../models/usuario';
+import { Club } from '../models/usuario';
 import styles from './Tarjeta.module.css';
 
 interface Props {
-    usuario: Usuario;
+    clubs: Club;
     games: Games[]; // Cambiar el tipo para reflejar una lista de juegos
 }
 
 
-export default function Tarjeta({ usuario, games }: Props) {
+export default function Tarjeta({ clubs: clubs, games }: Props) {
 return (
     <article className={styles.tarjeta}>    
-        <h2 className={styles.icono}>{usuario.ID}</h2>
-        <h2 className={styles.badge}>{usuario.nombre}</h2>
-        <h3 className={styles.badge}>{usuario.descripcion}</h3>
+        <h2 className={styles.icono}>{clubs.ID}</h2>
+        <h2 className={styles.badge}>{clubs.nombre}</h2>
+        <h3 className={styles.badge}>{clubs.descripcion}</h3>
         <section>
         <h4 id={styles.tarjeta} >Lista de Juegos</h4>
         </section>
@@ -21,7 +21,7 @@ return (
         <footer>
             <h3>
                 {games.map((game) => {
-                    const isClubGame = usuario.videojuegos.includes(game.ID);
+                    const isClubGame = clubs.videojuegos.includes(game.ID);
                     if (isClubGame) {
                         return (
                             <span
@@ -38,6 +38,7 @@ return (
                     return null;
                 })}
             </h3>
+            <button style={{ display: 'block', margin: '0 auto' }}>Solicitar Membresia</button>
         </footer>
         
     </article>

@@ -8,6 +8,9 @@ import ClubPage from './Pages/ClubPage.tsx';
 import ClubDetail from './Pages/ClubDetail.tsx';
 import Vpage from './Pages/Vpage.tsx';
 import Header from './navegacion/Header.tsx';
+import AllClubPages from './Pages/AllClubPages.tsx';
+
+
 
 
 const router = createBrowserRouter([
@@ -31,6 +34,12 @@ const router = createBrowserRouter([
     path: "/he",
     element: <div><Header/></div>,
   },
+  {
+    path: "/fire",
+    element: <div><AllClubPages/></div>,
+  },
+  
+  
   
 ]);
 
