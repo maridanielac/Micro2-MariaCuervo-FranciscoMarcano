@@ -1,11 +1,10 @@
 
 import { Link } from 'react-router-dom';
-import appFirebase from "../../src/credenciales";
+import {auth} from "../../src/credenciales";
 import {getAuth, signOut  } from "firebase/auth";
-const auth = getAuth(appFirebase)
+//const auth = getAuth(appFirebase)
 
 const HomePage = ({correoUsuario}) => {
-        
     
         return (
             <div>

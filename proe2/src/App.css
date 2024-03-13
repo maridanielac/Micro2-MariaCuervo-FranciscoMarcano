@@ -41,7 +41,7 @@
   color: #888;
 }
 
-.padre {
+.cuadro {
   display: flex;
   align-items: center;
   height: 100%;
@@ -55,11 +55,26 @@
   width: 100%;
 }
 
+.cajatexto{
+  background-color:#cccccc40;
+  border-color: slategray;
+  border-radius: 20px;
+  width: 90%;
+  padding: 15px;
+  border-width: 0%;
+  margin-bottom: 20px;
+}
+
+.cajatexto:focus{
+  outline: 1px solid cornflowerblue;
+  box-shadow: 0 0 10px cornflowerblue;
+}
+
 .btnform {
   background-color: #0D6EFD;
   border-color: slategray;
   border-radius: 30px;
-  width: 100%;
+  width: 70%;
   padding: 15px;
   border-width: 0px;
   margin-bottom: 20px;
