@@ -20,5 +20,7 @@
   "storage": {
     "rules": "storage.rules"
   },
-  "predeploy": ["npm run build"]
+  "predeploy": [
+    "npm run build"
+  ]
 }
