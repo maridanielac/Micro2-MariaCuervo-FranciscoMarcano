@@ -3,24 +3,25 @@ import { useNavigate } from "react-router-dom";
 import imageGoogle from "../assets/google.png"
 import {auth} from "../../src/credenciales";
 import {createUserWithEmailAndPassword, signInWithEmailAndPassword, GoogleAuthProvider, signInWithRedirect  } from "firebase/auth";
-import { Link } from "react-router-dom";
+import { Link,Navigate } from "react-router-dom";
+import '../App.css'
 
 
 const LoginPage = () => {
+
+    const navigate = useNavigate();
 
     const functAutenticacion = async(e) => {
         e.preventDefault();
         const correo = e.target.email.value;
         const password = e.target.password.value;
     
-
         try {
-            signInWithEmailAndPassword(auth, correo, password)
+            await signInWithEmailAndPassword(auth, correo, password)
+            navigate("/")
         } catch (error) {
             alert("el correo y/o password son incorrectos");
         }
-            
-     
        
     }
 
@@ -45,7 +46,11 @@ const LoginPage = () => {
                                 
                             </form>
                             {/* <button ><img src={imageGoogle}></img> <span>Iniciar con Google</span></button> */}
-                            <h4>{"No tienes cuenta"} <button className="btn btn-primary" >Registrate</button>
+                            <h4>{"No tienes cuenta"} 
+                            <Link to="/register" className="header-button">
+                            <button  className="header-button" >Registrate</button>
+                            </Link>
+                            
                             </h4>
                         </div>
                     </div>

@@ -9,6 +9,9 @@ import ClubDetail from './Pages/ClubDetail.tsx';
 import Vpage from './Pages/Vpage.tsx';
 import Header from './navegacion/Header.tsx';
 import AllClubPages from './Pages/AllClubPages.tsx';
+import LoginPage from './Pages/LoginPage.tsx'
+import RegisterPage from './Pages/RegisterPage.tsx'
+import ProfilePage from './Pages/ProfilesPage.tsx'
 
 
 const router = createBrowserRouter([
@@ -36,12 +39,24 @@ const router = createBrowserRouter([
     path: "/fire",
     element: <div><AllClubPages nombre={undefined} descripcion={undefined} videojuegos={undefined}/></div>,
   },
+  {
+    path: "/Login",
+    element: <div><LoginPage/></div>,
+  },
+  {
+    path: "/Register",
+    element: <div><RegisterPage /></div>,
+  },
+  {
+    path: "/Profile",
+    element: <div><ProfilePage /></div>,
+  },
   
  ]);
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <App />
-    {/* <RouterProvider router={router} /> */}
+    {/* <App /> */}
+    <RouterProvider router={router} /> 
   </React.StrictMode>,
 )

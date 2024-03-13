@@ -1,32 +1,25 @@
-
+import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
 
 import {auth} from "../../src/credenciales";
 import {getAuth, signOut  } from "firebase/auth";
-//const auth = getAuth(appFirebase)
+import { onAuthStateChanged } from "firebase/auth";
 
-// const HomePage = ({correoUsuario}) => {
-    
-//         return (
-//             <div>
-//                 <h1>Hello</h1>
-//                 <h4>{correoUsuario}<button className='btn btn-primary' onClick={() => signOut(auth)} >Logout</button></h4>
-//                 {/* <Link to="/clubs">
-//                     Ver Clubs
-//                 </Link> */}
-// =======
 import "./HPage.css"
 
-const HomePage = ({correoUsuario}) => {
+const HomePage = () => {
         
-        
+    const [user,setuser] = useState(null);
+
+   onAuthStateChanged(auth, (currentUser) => {
+    setuser(currentUser);
+   });
         return (
             
             <>
             
             <div style={{ display: 'flex', textAlign: 'right', position: 'fixed', top: 20, left: 'auto', right: 0, background: '#fff', zIndex: 999 }}>
-            
-                        
+          
                         <Link to="/clubs" className="header-button">
                             Ver Clubs
                         </Link>
@@ -39,10 +32,16 @@ const HomePage = ({correoUsuario}) => {
                         <Link to="/register" className="header-button">
                             Registrarse
                         </Link>
+                        <Link to="/profile" className="header-button">
+                            Perfil
+                        </Link>
             
-
+                        <button className="header-button" onClick={() => signOut(auth)} >Logout</button>
             </div>
-            <h4>{correoUsuario}<button className='btn btn-primary' onClick={() => signOut(auth)} >Logout</button></h4>
+            <div>
+            {user ? "Bienvenido " : ""}
+            {user ? user.email : ""}
+            </div>
             </>
         )    
     };

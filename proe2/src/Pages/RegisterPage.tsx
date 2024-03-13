@@ -2,8 +2,8 @@ import React,  { useState } from "react";
 import imageGoogle from "../assets/google.png"
 
 import {auth} from "../../src/credenciales";
-import {getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, GoogleAuthProvider, signInWithRedirect  } from "firebase/auth";
-//const auth = getAuth(appFirebase)
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword, GoogleAuthProvider, signInWithRedirect  } from "firebase/auth";
+
 
 const RegisterPage = () => {
     const [registrando, setRegistrando] = useState(false)   
