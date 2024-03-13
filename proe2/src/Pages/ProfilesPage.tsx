@@ -6,7 +6,7 @@ import { db } from "../credenciales";
 const ProfilePage = () => {
     const [nombre, setNombre] = useState("")
     //const [apellido] = useState("test")
-    const [profiles, setProfiles] = useState([])
+    const [profiles, setProfiles] = useState([] as any[])
     const profilesCollection = collection(db,"profiles")
 
     const getProfiles = async() => {
